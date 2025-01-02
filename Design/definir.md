@@ -1,0 +1,2 @@
+## Définir : 
+Le problème à résoudre est la gestion de l’inscription des apprenants, leur évaluation initiale et la gestion des résultats. Le processus actuel peut être long et complexe, et les résultats doivent être facilement accessibles à la fois pour les apprenants et les responsables de formation. Il est essentiel de rendre ce processus fluide, interactif et accessible via une interface intuitive.
