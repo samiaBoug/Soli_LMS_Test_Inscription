@@ -1,23 +1,20 @@
 @startuml
 left to right direction
-actor Administrator as Admin
-actor Learner
-actor System
 
-rectangle Manage-Sanctions {
-usecase "Define Sanction Rules" as UC1
-usecase "Apply Sanction Automatically" as UC2
-usecase "Notify Learner of Sanction" as UC3
-usecase "Notify Administrator of Sanction" as UC4
-usecase "View Sanction History" as UC5
-usecase "Generate Sanction Reports" as UC6
+actor "Responsable de formation" as Admin
+actor "Apprenant" as Apprenant
+
+rectangle "Gestion des Inscriptions et Tests" {
+  usecase "Remplir un formulaire d'inscription" as UC1
+  usecase "Passer le test d'évaluation" as UC2
+  usecase "Accéder au tableau de bord" as UC3
+  usecase "Gérer les tests" as UC4
+
 }
 
-Admin -- UC1
-Admin -- UC6
-System -- UC2
-System -- UC3
-System -- UC4
-Learner -- UC5
+Admin -- UC3 
+Admin -- UC4 
+Apprenant -- UC1
+Apprenant -- UC2 
 
 @enduml
