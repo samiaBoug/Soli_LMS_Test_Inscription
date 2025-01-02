@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+
+actor "Responsable de formation" as Admin
+actor "Apprenant" as Apprenant
+
+rectangle "Gestion des Inscriptions et Tests" {
+  usecase "Remplir un formulaire d'inscription" as UC1
+  usecase "Accéder au tableau de bord" as UC2
+
+}
+
+Admin -- UC2 
+Apprenant -- UC1
+
+@enduml
