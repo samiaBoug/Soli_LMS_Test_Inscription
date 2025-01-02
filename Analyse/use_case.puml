@@ -1,0 +1,23 @@
+@startuml
+left to right direction
+actor Administrator as Admin
+actor Learner
+actor System
+
+rectangle Manage-Sanctions {
+usecase "Define Sanction Rules" as UC1
+usecase "Apply Sanction Automatically" as UC2
+usecase "Notify Learner of Sanction" as UC3
+usecase "Notify Administrator of Sanction" as UC4
+usecase "View Sanction History" as UC5
+usecase "Generate Sanction Reports" as UC6
+}
+
+Admin -- UC1
+Admin -- UC6
+System -- UC2
+System -- UC3
+System -- UC4
+Learner -- UC5
+
+@enduml
