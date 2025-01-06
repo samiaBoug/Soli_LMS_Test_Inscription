@@ -7,6 +7,9 @@
 
 # Ignorer les dépendances node.js
 node_modules/
+Conception/mockup/node_modules/public-encrypt/test/test_rsa_privkey.pem
+Conception/mockup/node_modules
+
 
 # Ignorer les fichiers générés par le système
 *.DS_Store
@@ -15,3 +18,4 @@ Thumbs.db
 # Ignorer les fichiers de build
 /build/
 /dist/
+
