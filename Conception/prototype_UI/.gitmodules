@@ -1,0 +1,15 @@
+[submodule "modules/pkg_rh"]
+	path = modules/pkg_rh
+	url = https://github.com/soli-lms/pkg_rh_mockup.git
+[submodule "modules/shared"]
+	path = modules/shared
+	url = https://github.com/soli-lms/pkg_shared_mockup.git
+[submodule "modules/pkg_competences"]
+	path = modules/pkg_competences
+	url = https://github.com/soli-lms/pkg_competences_mockup.git
+[submodule "modules/pkg_creation_projets"]
+	path = modules/pkg_creation_projets
+	url = https://github.com/soli-lms/pkg_creation_projets_mockup.git
+[submodule "modules/pkg_realisation_projets"]
+	path = modules/pkg_realisation_projets
+	url = https://github.com/soli-lms/pkg_realisation_projets_mockup.git
