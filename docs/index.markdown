@@ -39,23 +39,23 @@ La planification des tâches est également suivie par un diagramme de Gantt, pe
 ## Branche fonctionnelle
 
 ### 1. Carte d’empathie pour le responsable de formation
-![alt text](carte_empathie_responsable.png)
+![alt text](/img/carte_empathie_responsable.png)
 
 ### 2. Carte d’empathie pour l’inscrit
-![alt text](carte_empathie_inscrit.png)
+![alt text](/img/carte_empathie_inscrit.png)
 
 ### 3. Définir
 
 Le problème à résoudre est la gestion de l’inscription des apprenants, leur évaluation initiale et la gestion des résultats. Le processus actuel est long, complexe et manuel, ce qui ralentit l'accès aux informations pour les apprenants et les responsables de formation. Le système proposé vise à automatiser ces processus et à rendre les informations facilement accessibles à travers une interface intuitive.
 
 ### 4. Cas d’utilisation générale
-![alt text](use_case.png)
+![alt text](/img/use_case.png)
 
 ### 5. Cas d’utilisation Sprint 1
-![alt text](use_case_sprint_1.png)
+![alt text](/img/use_case_sprint_1.png)
 ### 6. Cas d’utilisation Sprint 2
 
-![alt text](use_case_sprint_2.png)
+![alt text](/img/use_case_sprint_2.png)
 
 ## Branche technique
 
@@ -82,7 +82,7 @@ Le prototype initial a été développé sous forme d'une application blog, perm
 Les maquettes visuelles de l'interface ont été créées pour représenter les écrans de gestion des inscriptions, des tests et du tableau de bord. Ces maquettes ont été testées avec des utilisateurs pour assurer leur pertinence et leur simplicité.
 
 ### 2. Diagramme de classe
-![alt text](diagrame_de_class.png)
+![alt text](/img/diagrame_de_class.png)
 
 ## Réalisation
 
