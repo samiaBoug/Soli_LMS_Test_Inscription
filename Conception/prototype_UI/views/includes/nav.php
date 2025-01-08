@@ -21,12 +21,13 @@ if (isset($_POST['logout'])) {
 
         <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                <img src="/modules/shared/assets/images/man.png" class="user-image img-circle elevation-2"
+                <img src="/public/images/man.png" class="user-image img-circle elevation-2"
                     alt="Image d'utilisateur">
                 <span class="d-none d-md-inline">
                     <?php
                     if (isset($_SESSION['role'])) {
                         echo $_SESSION['role'];
+                        
                     } 
                     ?>
                 </span>
@@ -34,7 +35,7 @@ if (isset($_POST['logout'])) {
             <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <!-- Image d'utilisateur -->
                 <li class="user-header bg-info">
-                    <img src="/modules/shared/assets/images/man.png" class="img-circle elevation-2" alt="Image d'utilisateur">
+                    <img src="../../public/images/man.png" class="img-circle elevation-2" alt="Image d'utilisateur">
                     <p>
                     <?php
                     if (isset($_SESSION['role'])) {

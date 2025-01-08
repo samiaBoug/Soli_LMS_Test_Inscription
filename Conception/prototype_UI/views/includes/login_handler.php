@@ -10,14 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $role = filter_input(INPUT_POST, 'role', FILTER_SANITIZE_STRING);
 
     // Vérifier si le rôle est valide (à remplacer par votre logique de validation)
-    $valid_roles = ['formateur', 'apprenant', 'responsable'];
+    $valid_roles = ['inscrit', 'responsable'];
     if (in_array($role, $valid_roles)) {
         $_SESSION['role'] = $role;
-        header('Location: /includes/dashboard.php'); // Rediriger vers le tableau de bord
+        if($_SESSION['role']=== 'inscrit'){
+        header('Location: /views/inscrit/index.php'); // Rediriger vers le tableau de bord
+        }elseif($_SESSION['role']=== 'responsable'){
+        header('Location: /views/includes/dashboard.php'); // Rediriger vers le tableau de bord
+        }
         exit();
     } else {
         $_SESSION['error'] = 'Rôle invalide.';
-        header('Location: /modules/shared/login.php');
+        header('Location: /views/includes/login.php');
         exit();
     }
 }

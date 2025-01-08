@@ -7,9 +7,9 @@
 
     <div class="wrapper">
         <!-- Navigation -->
-        <?php include_once  $config['views_path'] . 'nav.php'; ?>
+        <?php include_once  $config['views_path'] . '/nav.php'; ?>
         <!-- Barre latérale -->
-        <?php include_once  $config['views_path'] . 'aside.php'; ?>
+        <?php include_once  $config['views_path'] . '/aside.php'; ?>
 
         <div class="content-wrapper pt-4">
             <div class="content-header">
@@ -28,13 +28,13 @@
 
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3>15</h3>
-                                    <p>Briefs Projet</p>
+                                    <h3>75</h3>
+                                    <p>Inscrits</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
                                 </div>
-                                <a href="./projets/index.php" class="small-box-footer">Plus d'informations <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="/views/Responsable/index.php" class="small-box-footer">Plus d'informations <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
 
@@ -43,27 +43,18 @@
                             <div class="small-box bg-success">
                                 <div class="inner">
                                     <h3>23</h3>
-                                    <p>Réalisations</p>
+                                    <p>Test</p>
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="./taches/index.php" class="small-box-footer">Plus d'informations <i class="fas fa-arrow-circle-right"></i></a>
+                                <a href="/views/Responsable/test.php" class="small-box-footer">Plus d'informations <i class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
 
                         <div class="col-lg-4 col-6">
 
-                            <div class="small-box bg-warning">
-                                <div class="inner">
-                                    <h3>60</h3>
-                                    <p>Apprenant</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
-                                <a href="./utilisateurs/index.php" class="small-box-footer">Plus d'informations <i class="fas fa-arrow-circle-right"></i></a>
-                            </div>
+                            
                         </div>
 
                     </div>
