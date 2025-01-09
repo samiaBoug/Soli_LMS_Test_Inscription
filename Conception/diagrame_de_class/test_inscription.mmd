@@ -1,19 +1,7 @@
-%%{init: {"themeVariables": {"graphLayout": "LR"}}}%%
+
 classDiagram
-
-    class Formation {
-        +int id
-        +string nom
-        +string description
-    }
-
-    class Test {
-        +int id
-        +string nom
-        +Date date_debut
-        +Date date_fin
-    }
-
+    direction LR
+    
     class Inscrit {
         +int id
         +string nom
@@ -22,9 +10,7 @@ classDiagram
         +string tel
         +string niveau_scolaire
         +Date date_naiss
-        +Date adresse
-
-        
+        +string adresse  
     }
 
     class Inscription {
@@ -32,16 +18,16 @@ classDiagram
         +Date date
         +int test_id
         +int Inscrit_id
-    }
-
-    class Resultat {
-        +int id
         +float score
-        +string commentaire
     }
-
-  
-
+        class Test {
+        +int id
+        +string nom
+        +Date date_debut
+        +Date date_fin
+        
+    }
+ 
     class Question {
         +int id
         +string question_text
@@ -55,10 +41,8 @@ classDiagram
         +int question_id
     }
 
-    Formation "1" -- "*" Test : contient
-    Inscrit "1" -- "*" Inscription : s'inscrit
-    Inscription "*" -- "1" Test : correspond à
-    Inscription "*" -- "1" Inscrit : appartient à
-    Resultat "1" -- "1" Inscription : évalue
-    Test "1" -- "*" Question : contient
-    Question "1" -- "*" Option : possède
+ 
+    Inscrit "1" --> "1" Inscription 
+    Inscription "*" <-- "1" Test 
+    Test "1" --> "*" Question
+    Question "1" --> "*" Option
