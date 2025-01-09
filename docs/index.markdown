@@ -82,7 +82,7 @@ Le prototype initial a été développé sous forme d'une application blog, perm
 Les maquettes visuelles de l'interface ont été créées pour représenter les écrans de gestion des inscriptions, des tests et du tableau de bord. Ces maquettes ont été testées avec des utilisateurs pour assurer leur pertinence et leur simplicité.
 
 ### 2. Diagramme de classe
-![alt text](/img/diagrame_de_class.png)
+![alt text](img/diagrame_de_class.png)
 
 ## Réalisation
 
