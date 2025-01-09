@@ -1,48 +1,44 @@
-
 classDiagram
-    direction LR
-    
+direction LR
     class Inscrit {
-        +int id
-        +string nom
-        +string prenom
-        +string email
+        +int idInscrit
+        +String nom
+        +String prenom
+        +String email
+        +String motDePasse
+        +String specialisation
         +string tel
         +string niveau_scolaire
-        +Date date_naiss
-        +string adresse  
+        +date date_naiss
+        +string adresse
     }
 
-    class Inscription {
-        +int id
-        +Date date
-        +int test_id
-        +int Inscrit_id
-        +float score
+    class Test {
+        +int idTest
+        +Date datePassation
+        +int duree
     }
-        class Test {
-        +int id
-        +string nom
-        +Date date_debut
-        +Date date_fin
-        
-    }
- 
     class Question {
-        +int id
-        +string question_text
-        +int test_id
+        +int idQuestion
+        +String enonce
     }
-
     class Option {
-        +int id
-        +string text
-        +boolean is_correct
-        +int question_id
+        +int idOption
+        +String texteOption
+        +bool estCorrecte
+    }
+    class ResultatTest {
+        +int idResultat
+        +int tempsUtilise
+        +float score
+        +float /pourcentageReussite
+    }
+    class Reponse {
+        +int idReponse
+        +String reponseDonnee
     }
 
- 
-    Inscrit "1" --> "1" Inscription 
-    Inscription "*" <-- "1" Test 
+    Inscrit "1" --> "1" Test 
     Test "1" --> "*" Question
-    Question "1" --> "*" Option
+    Question "1" --> "*" Option     
+    Reponse "1" --> "1" Question 
