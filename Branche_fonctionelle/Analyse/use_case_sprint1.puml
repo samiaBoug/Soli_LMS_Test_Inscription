@@ -5,7 +5,6 @@ actor "Responsable de formation" as Admin
 actor "Apprenant" as Apprenant
 
 rectangle "Gestion des Inscriptions et Tests" {
-  usecase "Passer le test d'évaluation" as UC1
   usecase "Accéder au tableau de bord" as UC2
 
 }
