@@ -77,8 +77,8 @@
                                                     <a href="show.php" class="btn btn-info btn-sm mb-1">
                                                         <i class="far fa-eye"></i>
                                                     </a>
-                                                    <a href="edit.php" class="btn btn-warning btn-sm">
-                                                        <i class="far fa-edit"></i>
+                                                    <a href="edit.php" class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash"></i>
                                                     </a>
                                                 </td>
                                             </tr>

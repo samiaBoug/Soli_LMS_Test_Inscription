@@ -3,7 +3,7 @@
 <html lang="fr">
 <?php include_once  $config['views_path'] . '/head.php'; ?>
 
-<body class="sidebar-mini">
+<body class="sidebar-mini" >
 <div id="wrapper" class="clearfix">
     <header id="header" class="bg-transparent" data-sticky-class="not-dark" data-responsive-class="not-dark">
         <div id="header-wrap">
@@ -58,7 +58,7 @@
                         <div class="slider-caption">
                             <h2>Inscription 2024-2025</h2>
                             <p>Vous avez entre 18 et 35 ans? Vous êtes motivé, passionné par les technologies digitales? Inscrivez-vous maintenant!</p>
-                            <a href="/views/inscrit/test.php" target="_blank" class="btn btn-lg btn-warning btn-rounded">Je m'inscris!</a>
+                            <a href="/views/inscrit/inscription.php" target="_blank" class="btn btn-lg btn-warning btn-rounded">Je m'inscris!</a>
                         </div>
                     </div>
                 </div>
@@ -69,9 +69,8 @@
     </section>
 
 
-    <footer id="footer" class="bg-dark text-white py-4">
+    <footer id="footer" class="bg-dark text-white py-4 my-4">
         <div class="container text-center">
-            <img id="footer-logo" src="/images/logo/logo-solicode.svg" alt="Image" class="mb-3">
             <p>&copy; 2025 All Rights Reserved by SoliCode</p>
         </div>
     </footer>

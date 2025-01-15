@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-lg-4 col-6">
                             <!-- Carte pour afficher le seuil ou la moyenne -->
-                            <div class="small-box bg-warning">
+                            <div class="small-box bg-warning" >
                                 <div class="inner">
                                     <h3>53%</h3> <!-- Remplacez 50 par le seuil ou la moyenne que vous souhaitez afficher -->
                                     <p>Seuil de Réussite</p> <!-- Ou "Moyenne" si vous souhaitez afficher la moyenne -->
@@ -58,6 +58,7 @@
                                 <div class="icon">
                                     <i class="ion ion-arrow-up-c"></i> <!-- Icône de seuil ou de moyenne -->
                                 </div>
+                               
                             </div>
                         </div>
 

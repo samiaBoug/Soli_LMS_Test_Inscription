@@ -17,7 +17,9 @@ direction LR
         +int idTest
         +Date datePassation
         +int duree
+        +int resultat
     }
+  
     class Question {
         +int idQuestion
         +String enonce
@@ -28,12 +30,9 @@ direction LR
         +bool estCorrecte
     }
 
-    class Reponse {
-        +int idReponse
-        +String reponseDonnee
-    }
+  
 
     Inscrit "1" --> "1" Test 
-    Test "1" --> "*" Question
+    Test "*" --> "*" Question
     Question "1" --> "*" Option     
-    Reponse "1" --> "1" Question 
+  
