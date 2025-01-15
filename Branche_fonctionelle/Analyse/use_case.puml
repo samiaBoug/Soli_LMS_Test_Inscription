@@ -7,8 +7,8 @@ actor "Apprenant" as Apprenant
 rectangle "Gestion des Inscriptions et Tests" {
   usecase "Remplir un formulaire d'inscription" as UC1
   usecase "Passer le test d'évaluation" as UC2
-  usecase "Accéder au tableau de bord" as UC3
-  usecase "Gérer les tests" as UC4
+  usecase "Accès aux statistiques" as UC3
+  usecase "Gérer les questions" as UC4
 
 }
 

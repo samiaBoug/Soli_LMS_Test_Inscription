@@ -2,14 +2,13 @@
 left to right direction
 
 actor "Responsable de formation" as Admin
-actor "Apprenant" as Apprenant
 
-rectangle "Gestion des Inscriptions et Tests" {
-  usecase "Accéder au tableau de bord" as UC2
+rectangle  {
+  usecase "Accès aux statistiques" as UC2
 
 }
 
 Admin -- UC2 
-Apprenant -- UC1
+
 
 @enduml
