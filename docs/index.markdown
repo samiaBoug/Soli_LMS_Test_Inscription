@@ -3,28 +3,121 @@ layout: default
 title: "Mon Rapport"
 ---
 # Rapport du projet : Gestion des Inscriptions et Test - Solicode LMS
+<div style="page-break-after: always;"></div>
 
 ## Introduction
 
-Dans le cadre du projet Solicode LMS, mon rôle porte sur la gestion des inscriptions pour l'année scolaire ainsi que sur les tests d'inscription. Le but est de simplifier et d’automatiser le processus d'inscription des apprenants, tout en fournissant un moyen efficace pour évaluer leurs compétences et gérer les résultats. Ce rapport décrit les différentes étapes de développement de cette fonctionnalité, en s’appuyant sur diverses méthodologies telles que Scrum, Design Thinking, et la méthode Y(2Tup).
+Dans le cadre du projet Solicode LMS, mon rôle porte sur la gestion des inscriptions pour l'année scolaire ainsi que sur les tests d'inscription. Le but est de simplifier et d’automatiser le processus d'inscription des apprenants, tout en fournissant un moyen efficace pour évaluer leurs compétences et gérer les résultats. Ce rapport décrit les différentes étapes de développement de cette fonctionnalité, en s’appuyant sur diverses méthodologies telles que Scrum, Design UX, et la méthode Y(2Tup).
+<div style="page-break-after: always;"></div>
 
 ## Contexte du projet
 
 Le projet Solicode LMS vise à moderniser le processus d'inscription et d'évaluation des apprenants, en remplaçant les anciennes méthodes manuelles par un système en ligne fluide et interactif. Cela inclut la gestion des inscriptions, la création de tests d'évaluation, et la distribution rapide des résultats.
+<div style="page-break-after: always;"></div>
 
 ## Processus de développement
 
 ### 1- SCRUM
 
-Le développement du projet suit la méthodologie agile SCRUM, qui permet de gérer le projet par sprints. Chaque sprint est une période de travail focalisée sur des tâches spécifiques, permettant d’itérer rapidement sur les fonctionnalités et d’adapter le produit aux besoins des utilisateurs. SCRUM aide à optimiser la communication entre les membres de l’équipe et à livrer des versions progressives et testées du produit.
+Le développement du projet suit la méthodologie agile SCRUM, qui est une approche itérative et incrémentale pour la gestion de projet. Elle est particulièrement adaptée aux environnements complexes et en constante évolution.
+
+**Définition :** SCRUM est basé sur des cycles de travail courts et répétitifs appelés sprints, qui permettent de livrer rapidement des incréments de produit potentiellement utilisables.
+
+**Étapes du processus SCRUM :**
+
+1. **Rôles et responsabilités :**
+
+   - **Product Owner** : Responsable de définir les besoins et priorités.
+   - **Scrum Master** : Garant de l'application des principes SCRUM et facilitateur.
+   - **Équipe de développement** : Chargée de réaliser les tâches techniques.
+
+2. **Sprint Planning :**
+
+   - Planification des tâches à accomplir pour le sprint en cours.
+   - Définition des objectifs du sprint.
+
+3. **Daily Scrum :**
+
+   - Réunion quotidienne (15 minutes maximum) pour suivre l'avancement et identifier les obstacles.
+
+4. **Sprint Review :**
+
+   - Démonstration de l'incrément réalisé à la fin du sprint.
+   - Récolte des retours des parties prenantes.
+
+5. **Sprint Retrospective :**
+
+   - Analyse des points forts et des axes d'amélioration pour les prochains sprints.
+
+**Intérêt :**
+
+- Flexibilité pour s'adapter aux besoins changeants des utilisateurs.
+- Amélioration continue du produit et des processus.
+- Renforcement de la collaboration et de la transparence au sein de l'équipe.
+
+---
 
 ### 2- Méthode 2TUP
 
-La méthode 2TUP (Two-Tiered Unified Process) permet de structurer le développement en deux phases principales : la phase d’analyse (compréhension des besoins) et la phase de développement (implémentation). Cette approche facilite la gestion des tâches en simplifiant la planification tout en mettant l'accent sur l'amélioration continue à chaque itération.
+La méthode 2TUP (Two-Tiered Unified Process) est une approche structurée qui divise le projet en deux grandes phases. Elle se concentre sur la compréhension précise des besoins avant de passer à l'implémentation technique.
 
-### 3- Design Thinking
+**Définition :** 2TUP est une variante simplifiée du Rational Unified Process (RUP) et se démarque par son focus sur une planification claire et une exécution progressive.
 
-Le Design Thinking est une approche centrée sur l'utilisateur. Dans ce projet, elle a permis de mieux comprendre les besoins et attentes des apprenants et des responsables de formation. En intégrant les retours des utilisateurs dès le début, nous avons pu concevoir une interface plus intuitive et répondre aux besoins spécifiques de chaque partie prenante.
+**Étapes du processus 2TUP :**
+
+1. **Phase d'analyse :**
+
+   - Identification des besoins des utilisateurs et des contraintes techniques.
+   - Modélisation des processus à l'aide de diagrammes UML (cas d'utilisation, diagrammes de classes, etc.).
+
+2. **Phase de développement :**
+
+   - Conception et codage des fonctionnalités définies.
+   - Tests unitaires et intégration pour vérifier la conformité.
+
+**Intérêt :**
+
+- Réduction des risques grâce à une analyse approfondie avant le développement.
+- Meilleure anticipation des problèmes techniques et organisationnels.
+- Amélioration de la qualité globale grâce à une approche systématique.
+
+---
+
+### 3- Design UX
+
+Le Design UX (expérience utilisateur) est une discipline qui vise à concevoir des interfaces centrées sur les besoins et attentes des utilisateurs. Dans ce projet, il a joué un rôle essentiel pour garantir une expérience intuitive et agréable.
+
+**Définition :** Le Design UX est le processus de création de produits qui offrent des expériences significatives et pertinentes aux utilisateurs, en prenant en compte l'ergonomie, l'accessibilité et l'esthétique.
+
+**Étapes du Design UX :**
+
+1. **Recherche utilisateur :**
+
+   - Interviews, enquêtes et observation pour comprendre les besoins et comportements.
+
+2. **Idéation :**
+
+   - Brainstorming et conception de prototypes basse fidélité pour tester les idées.
+
+3. **Prototypage :**
+
+   - Création de maquettes interactives pour valider les concepts avec les utilisateurs.
+
+4. **Tests utilisateurs :**
+
+   - Collecte de retours sur les prototypes pour ajuster et améliorer l'interface.
+
+5. **Implémentation :**
+
+   - Intégration des maquettes finales dans le développement.
+
+**Intérêt :**
+
+- Augmentation de la satisfaction des utilisateurs grâce à une meilleure compréhension de leurs besoins.
+- Réduction des erreurs et des incompréhensions dans l'utilisation du produit.
+- Amélioration de la réputation et de la fidélité des utilisateurs envers la solution. 
+
+<div style="page-break-after: always;"></div>
 
 ## Planification
 
@@ -36,6 +129,8 @@ Toutes les tâches et fonctionnalités sont organisées et suivies sur GitHub. L
 
 La planification des tâches est également suivie par un diagramme de Gantt, permettant de visualiser les différentes étapes du projet et de garantir que les délais sont respectés.
 
+<div style="page-break-after: always;"></div>
+
 ## Branche fonctionnelle
 
 ### 1. Carte d’empathie pour le responsable de formation
@@ -46,7 +141,9 @@ La planification des tâches est également suivie par un diagramme de Gantt, pe
 
 ### 3. Définir
 
-Le problème à résoudre est la gestion de l’inscription des apprenants, leur évaluation initiale et la gestion des résultats. Le processus actuel est long, complexe et manuel, ce qui ralentit l'accès aux informations pour les apprenants et les responsables de formation. Le système proposé vise à automatiser ces processus et à rendre les informations facilement accessibles à travers une interface intuitive.
+L'application actuelle, développée en C# rencontre des difficultés opérationnelles importantes. Le déploiement s'avère complexe. 
+De plus, l'absence d'une architecture modulaire complique l'intégration avec d'autres besoins tels que la gestion des absences ou des briefs. 
+Cette limitation entraîne une fragmentation des fonctionnalités et des données, rendant la maintenance plus lourde et l'expérience utilisateur moins optimale.
 
 ### 4. Cas d’utilisation générale
 ![alt text](/img/use_case.png)
@@ -56,6 +153,8 @@ Le problème à résoudre est la gestion de l’inscription des apprenants, leur
 ### 6. Cas d’utilisation Sprint 2
 
 ![alt text](/img/use_case_sprint_2.png)
+
+<div style="page-break-after: always;"></div>
 
 ## Branche technique
 
@@ -75,6 +174,8 @@ Pour garantir une maîtrise complète de l'interface, des composants de l'UI tel
 
 Le prototype initial a été développé sous forme d'une application blog, permettant de tester l'interface utilisateur avant de la déployer dans un environnement de production.
 
+<div style="page-break-after: always;"></div>
+
 ## Conception
 
 ### 1. Maquettes
@@ -85,10 +186,14 @@ Les maquettes visuelles de l'interface ont été créées pour représenter les 
 ![alt text](img/diagrame_de_class.png)
 ![alt text](img/diagrame_de_class.png)
 
+<div style="page-break-after: always;"></div>
+
 ## Réalisation
 
 Le développement du projet a suivi les étapes planifiées, en se concentrant sur la création des formulaires d'inscription, des tests d'évaluation et des fonctionnalités de gestion des résultats. Chaque fonctionnalité a été intégrée progressivement au sein du système à travers les sprints définis.
 
+<div style="page-break-after: always;"></div>
+
 ## Conclusion
 
-Le projet Solicode LMS vise à simplifier et automatiser le processus d'inscription et d'évaluation des apprenants. En s'appuyant sur les méthodologies agiles telles que Scrum, Design Thinking et Y(2Tup), nous avons pu construire une solution robuste, intuitive et efficace qui répond aux besoins des utilisateurs.
+Le projet Solicode LMS vise à simplifier et automatiser le processus d'inscription et d'évaluation des apprenants. En s'appuyant sur les méthodologies agiles telles que Scrum, Design UX et Y(2Tup), nous avons pu construire une solution robuste, intuitive et efficace qui répond aux besoins des utilisateurs.
