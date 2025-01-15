@@ -68,65 +68,6 @@
         </div>
     </section>
 
-    <section id="section-chiffre" class="section bg-transparent py-5">
-        <div class="container text-center">
-            <div class="fancy-title mb-4">
-                <h2>SOLICODE EN CHIFFRES</h2>
-            </div>
-            <div class="row">
-                <div class="col-6 col-lg-3 mb-4">
-                    <i class="icon-users display-4"></i>
-                    <div class="counter" style="color: #3945ba"><span data-from="1" data-to="12" data-refresh-interval="50" data-speed="1000">12</span></div>
-                    <h5>Staff</h5>
-                </div>
-                <div class="col-6 col-lg-3 mb-4">
-                    <i class="icon-keyboard display-4"></i>
-                    <div class="counter" style="color: #3945ba"><span data-from="1" data-to="120" data-refresh-interval="50" data-speed="1000">120</span></div>
-                    <h5>Places pédagogiques</h5>
-                </div>
-                <div class="col-6 col-lg-3 mb-4">
-                    <i class="icon-graduation-cap display-4"></i>
-                    <div class="counter" style="color: #3945ba"><span data-from="1" data-to="43" data-refresh-interval="50" data-speed="1000">43</span></div>
-                    <h5>Lauréats</h5>
-                </div>
-                <div class="col-6 col-lg-3 mb-4">
-                    <i class="icon-award display-4"></i>
-                    <div class="counter" style="color: #3945ba"><span data-from="1" data-to="2" data-refresh-interval="50" data-speed="1000">2</span></div>
-                    <h5>Filières</h5>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="section-contact" class="section py-5">
-        <div class="container">
-            <div class="fancy-title mb-4">
-                <h2>Contact</h2>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3238.1819013774953!2d-5.827722685510491!3d35.74633358017912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b87c216892bc7%3A0x48bdf85995e9c186!2sSolicode%20Tanger!5e0!3m2!1sfr!2sma!4v1621944120029!5m2!1sfr!2sma" style="border:0; width: 100%; height: 300px;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-                <div class="col-md-6">
-                    <p>Le Maroc de demain est numérique et SOLICODE est la formation privilégiée pour vous préparer aux futurs challenges. Devenez développeurs dès à présent en rejoignant une formation de qualité, délivrée par <a href="https://www.ofppt.ma/">www.ofppt.ma</a></p>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <address>
-                                <strong>Adresse:</strong><br>
-                                Bni Waryaghel 90000 Tanger, Maroc
-                            </address>
-                            <strong>Email:</strong> info@solicode.co
-                        </div>
-                        <div class="col-md-6">
-                            <strong>Portable:</strong> (212) 0634 39 05 05<br>
-                            <strong>Fixe:</strong> (212) 0539 30 88 85
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="mailto:info@solicode.co" class="btn btn-lg btn-block btn-warning btn-rounded">Contactez-nous</a>
-        </div>
-    </section>
 
     <footer id="footer" class="bg-dark text-white py-4">
         <div class="container text-center">

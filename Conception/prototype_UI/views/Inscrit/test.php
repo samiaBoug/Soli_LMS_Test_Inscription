@@ -39,7 +39,7 @@
 
     <section class="section py-5 bg-light">
         <div class="container">
-            <h1 class="text-center mb-4">Formulaire d'Inscription pour le Développement Web</h1>
+            <h1 class="text-center mb-4"></h1>
             <div class="row">
                 <div class="col-md-8 mx-auto">
                     <!-- Formulaire du QCM -->

@@ -46,7 +46,6 @@
 
     <!-- TODO : à ajouter dans app.js -->
     <script>
-
        $.widget.bridge('uibutton', $.ui.button)
    </script>
 </head>

@@ -83,6 +83,7 @@ Les maquettes visuelles de l'interface ont été créées pour représenter les 
 
 ### 2. Diagramme de classe
 ![alt text](img/diagrame_de_class.png)
+![alt text](img/diagrame_de_class.png)
 
 ## Réalisation
 
