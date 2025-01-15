@@ -1,5 +1,6 @@
 classDiagram
 direction LR
+
     class Inscrit {
         +int idInscrit
         +String nom
@@ -7,10 +8,10 @@ direction LR
         +String email
         +String motDePasse
         +String specialisation
-        +string tel
-        +string niveau_scolaire
-        +date date_naiss
-        +string adresse
+        +String tel
+        +String niveau_scolaire
+        +Date date_naiss
+        +String adresse
     }
 
     class Test {
@@ -19,20 +20,18 @@ direction LR
         +int duree
         +int resultat
     }
-  
+
     class Question {
         +int idQuestion
         +String enonce
     }
+
     class Option {
         +int idOption
         +String texteOption
         +bool estCorrecte
     }
 
-  
-
     Inscrit "1" --> "1" Test 
-    Test "*" --> "*" Question
-    Question "1" --> "*" Option     
-  
+    Test "*" --> "*" Question 
+    Question "1" --> "*" Option 
