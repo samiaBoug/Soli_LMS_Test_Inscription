@@ -7,11 +7,14 @@ actor "Apprenant" as Apprenant
 rectangle "Gestion des Inscriptions et Tests" {
   usecase "Remplir un formulaire d'inscription" as UC1
   usecase "Gérer les tests" as UC2
+   usecase "Passer le test d'évaluation" as UC3
 
 }
 
 Admin -- UC2
 Apprenant -- UC1
+Apprenant -- UC3
+
 
 
 @enduml
