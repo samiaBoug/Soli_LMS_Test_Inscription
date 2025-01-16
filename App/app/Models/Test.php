@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Test extends Model
 {
     //
+    public $fillable = ['inscrit_id','date_passation', 'duree', 'resultat'];
+    
     public function inscrits(){
         return $this->belongsTo(Inscrit::class);
     }

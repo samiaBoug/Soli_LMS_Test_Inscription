@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Question extends Model
 {
     //
+    public $fillable = ['enonce'];
     public function options(){
         return $this->hasMany(Option::class);
     }
