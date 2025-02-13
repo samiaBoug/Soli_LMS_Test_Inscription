@@ -16,32 +16,32 @@ class QuestionTestSeeder extends Seeder
         //
         // Lier les tests aux questions de manière aléatoire
         DB::table('question_test')->insert([
-            'test_id' => 3, // ID du test
+            'test_id' => 1, // ID du test
             'question_id' => 1 // ID de la question
         ]);
         
         DB::table('question_test')->insert([
-            'test_id' => 3,
+            'test_id' => 1,
             'question_id' => 2
         ]);
         
         DB::table('question_test')->insert([
-            'test_id' => 3,
+            'test_id' => 1,
             'question_id' => 3
         ]);
 
         DB::table('question_test')->insert([
-            'test_id' => 4,
+            'test_id' => 2,
             'question_id' => 1
         ]);
         
         DB::table('question_test')->insert([
-            'test_id' => 4,
+            'test_id' => 2,
             'question_id' => 2
         ]);
 
         DB::table('question_test')->insert([
-            'test_id' => 5,
+            'test_id' => 3,
             'question_id' => 3
         ]);
     }
