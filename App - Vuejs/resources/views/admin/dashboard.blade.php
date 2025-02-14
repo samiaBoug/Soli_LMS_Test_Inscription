@@ -10,26 +10,26 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div class="bg-blue-500 text-white p-4 rounded-lg shadow-md">
+            <div class="bg-blue-500 text-white p-6 rounded-lg shadow-md">
                 <h3 class="text-2xl font-semibold" id="usersCount"></h3>
                 <p>Inscrits</p>
                 <a href="/views/Responsable/index.php" class="block mt-4 text-sm">Plus d'informations →</a>
             </div>
             
-            <div class="bg-green-600 text-white p-4 rounded-lg shadow-md">
+            <div class="bg-green-600 text-white p-6 rounded-lg shadow-md">
                 <h3 class="text-2xl font-semibold" id="inscritWebCount"></h3>
                 <p>Inscrits Web</p>
             </div>
-            <div class="bg-green-700 text-white p-4 rounded-lg shadow-md">
+            <div class="bg-green-700 text-white p-6 rounded-lg shadow-md">
                 <h3 class="text-2xl font-semibold" id="inscritMobileCount"></h3>
                 <p>Inscrits Mobile</p>
             </div>
-            <div class="bg-green-500 text-white p-4 rounded-lg shadow-md">
+            <div class="bg-green-500 text-white p-6 rounded-lg shadow-md">
                 <h3 class="text-2xl font-semibold" id="qcmCount"></h3>
                 <p>QCM</p>
                 <a href="/views/Responsable/test.php" class="block mt-4 text-sm">Plus d'informations →</a>
             </div>
-            <div class="bg-yellow-500 text-white p-4 rounded-lg shadow-md">
+            <div class="bg-yellow-500 text-white p-6 rounded-lg shadow-md">
                 <h3 class="text-2xl font-semibold" id="seuilValue"></h3>
                 <p>Seuil de Réussite</p>
             </div>

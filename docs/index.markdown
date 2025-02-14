@@ -180,7 +180,14 @@ Le prototype initial a été développé sous forme d'une application blog, perm
 
 ### 1. Maquettes
 
-Les maquettes visuelles de l'interface ont été créées pour représenter les écrans de gestion des inscriptions, des tests et du tableau de bord. Ces maquettes ont été testées avec des utilisateurs pour assurer leur pertinence et leur simplicité.
+Les maquettes visuelles de l'interface ont été créées pour représenter les écrans de gestion des inscriptions, des tests et du tableau de bord. Ces maquettes ont été testées avec des utilisateurs pour assurer leur pertinence et leur simplicité. 
+#### maquette tableau de board
+![alt text](img/dashboard.png)
+#### maquette index
+![alt text](img/index.png)
+#### maquette formulaire
+
+![alt text](img/formulaire.png)
 
 ### 2. Diagramme de classe
 ![alt text](img/diagrame_de_class.png)
