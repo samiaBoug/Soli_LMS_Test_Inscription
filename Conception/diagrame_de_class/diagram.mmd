@@ -10,47 +10,42 @@ namespace PkgTestInscription {
   class BrancheQuestion
 }
 
-%% type : Choix unique , choix multiple
-class Question{
-    idQuestion : int
-    type : string 
-    texte : string
-}
 
-class ReponseTest {
-    idReponseTest : int
-    duree : int
-    score : int
-}
 class Inscrit{
     idInscrit : int
-    code : int 
-    nom_fr : string
-    prenom_fr : string
-    nom_ar : string
-    prenom_ar : string
-    cin : string
-    sexe : string
-    date_naiss : Date
-    email: string  
-    adresse : string 
-    ville : string 
-    tel : string
-    type_bac : string
-    annee_bac : Date
-    niveau_scolaire : string
-    diplome : string
+    nom : string
+    prenom : string
+    email: string
+    motDePasse : string
     specialisation : string
+    tel : string
+    niveau_scolaire : string
+    date_naiss : Date
+    adresse : string 
 
 }
 class Test{
     idTest : int
 
 }
+
+class Question{
+    idQuestion : int
+    type : string 
+    texte : string
+
+}
 class OptionQuestion{
     idOption : int
     texte : string
     correct : boolean 
+}
+
+
+class ReponseTest {
+    idReponseTest : int
+    duree : int
+    score : int
 }
 class ReponseQuestion{
     idReponseQuestion : int
@@ -62,12 +57,10 @@ class BrancheQuestion{
 }
 
 Inscrit "1" --> "1" ReponseTest
-ReponseTest "1" --> "1" Test
-OptionQuestion "*" --> "1" Question
+ReponseTest "1"-->"1" Test
+Question "1" --> "*" OptionQuestion
 ReponseQuestion "1" --> "1" Question
 BrancheQuestion "1" --> "*" Question
 ReponseQuestion "1" --> "1" Inscrit
 ReponseQuestion "*" --> "*" OptionQuestion
-Test "*"--> "*" BrancheQuestion
-
-
+Test "*" --> "*" BrancheQuestion
