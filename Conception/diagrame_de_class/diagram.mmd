@@ -1,0 +1,66 @@
+classDiagram
+
+namespace PkgTestInscription {
+  class Inscrit 
+  class Test
+  class Question
+  class OptionQuestion
+  class ReponseTest
+  class ReponseQuestion
+  class BrancheQuestion
+}
+
+
+class Inscrit{
+    idInscrit : int
+    nom : string
+    prenom : string
+    email: string
+    motDePasse : string
+    specialisation : string
+    tel : string
+    niveau_scolaire : string
+    date_naiss : Date
+    adresse : string 
+
+}
+class Test{
+    idTest : int
+
+}
+
+class Question{
+    idQuestion : int
+    type : string 
+    texte : string
+
+}
+class OptionQuestion{
+    idOption : int
+    texte : string
+    correct : boolean 
+}
+
+
+class ReponseTest {
+    idReponseTest : int
+    duree : int
+    score : int
+}
+class ReponseQuestion{
+    idReponseQuestion : int
+    isCorrect : boolean
+}
+class BrancheQuestion{
+    idBranche : int
+    nomBranche : string
+}
+
+Inscrit "1" --> "1" ReponseTest
+ReponseTest "1"-->"1" Test
+Question "1" --> "*" OptionQuestion
+ReponseQuestion "1" --> "1" Question
+BrancheQuestion "1" --> "*" Question
+ReponseQuestion "1" --> "1" Inscrit
+ReponseQuestion "*" --> "*" OptionQuestion
+Test "*" --> "*" BrancheQuestion
