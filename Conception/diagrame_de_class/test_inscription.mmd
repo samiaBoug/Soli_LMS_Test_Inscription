@@ -32,6 +32,17 @@ direction LR
         +bool estCorrecte
     }
 
+    class Reponse {
+        +int idReponse
+        +int idInscrit
+        +int idQuestion
+        +int idOption
+        +bool estCorrecte
+    }
+
     Inscrit "1" --> "1" Test 
     Test "*" --> "*" Question 
     Question "1" --> "*" Option 
+    Inscrit "1" --> "*" Reponse
+    Question "1" --> "*" Reponse
+    Option "1" --> "*" Reponse
