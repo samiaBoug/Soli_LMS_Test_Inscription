@@ -10,12 +10,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Tag;
 use App\Models\User;
+use App\Services\ArticleService;
 
 class ArticleController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
+  protected $articleService ;
+  public function __construct(ArticleService $articleService)
+  {
+    $this->articleService = $articleService;
+  }
+
  
   public function index(Request $request)
   {
