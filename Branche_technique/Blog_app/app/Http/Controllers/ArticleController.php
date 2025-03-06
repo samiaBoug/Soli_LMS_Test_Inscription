@@ -85,14 +85,7 @@ class ArticleController extends Controller
       return redirect()->route('articles.index');
     }
 
-    // $validated = $request->validate([
-    //   'title' => 'required|string|max:255',
-    //   'category' => 'required|exists:categories,id',
-    //   'content' => 'required|string',
-    //   'tags' => 'array',
-    //   'tags.*' => 'exists:tags,id',
-    // ]);
-   
+
     $article = Article::create([
       'title' => $request['title'],
       'category_id' => $request['category'],
@@ -141,28 +134,22 @@ class ArticleController extends Controller
   /**
    * Update the specified resource in storage.
    */
-  public function update(Request $request, $id)
+  public function update(ArticleRequest $request, $id)
   {
     if (!Auth::check() || !Auth::user()->roles->contains('name', 'admin')) {
       return redirect()->route('articles.index');
     }
 
-    $validated = $request->validate([
-      'title' => 'required|string|max:255',
-      'category' => 'required|exists:categories,id',
-      'content' => 'required|string',
-      'tags' => 'array',
-      'tags.*' => 'exists:tags,id',
-    ]);
+
 
     $article = Article::findOrFail($id);
     $article->update([
-      'title' => $validated['title'],
-      'category_id' => $validated['category'],
-      'content' => $validated['content'],
+      'title' => $request['title'],
+      'category_id' => $request['category'],
+      'content' => $request['content'],
     ]);
 
-    $article->tags()->sync($validated['tags'] ?? []);
+    $article->tags()->sync($request['tags'] ?? []);
 
     return redirect()->route('articles.index')->with('success', 'L\'article a bien été modifié');
   }
