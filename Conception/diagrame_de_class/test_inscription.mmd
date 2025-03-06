@@ -1,48 +1,73 @@
 classDiagram
-direction LR
 
-    class Inscrit {
-        +int idInscrit
-        +String nom
-        +String prenom
-        +String email
-        +String motDePasse
-        +String specialisation
-        +String tel
-        +String niveau_scolaire
-        +Date date_naiss
-        +String adresse
-    }
+namespace PkgTestInscription {
+  class Inscrit 
+  class Test
+  class Question
+  class OptionQuestion
+  class ReponseTest
+  class ReponseQuestion
+  class BrancheQuestion
+}
 
-    class Test {
-        +int idTest
-        +Date datePassation
-        +int duree
-        +int resultat
-    }
+%% type : Choix unique , choix multiple
+class Question{
+    idQuestion : int
+    type : string 
+    texte : string
+}
 
-    class Question {
-        +int idQuestion
-        +String enonce
-    }
+class ReponseTest {
+    idReponseTest : int
+    duree : int
+    score : int
+}
+class Inscrit{
+    idInscrit : int
+    code : int 
+    nom_fr : string
+    prenom_fr : string
+    nom_ar : string
+    prenom_ar : string
+    cin : string
+    sexe : string
+    date_naiss : Date
+    email: string  
+    adresse : string 
+    ville : string 
+    tel : string
+    type_bac : string
+    annee_bac : Date
+    niveau_scolaire : string
+    diplome : string
+    specialisation : string
 
-    class Option {
-        +int idOption
-        +String texteOption
-        +bool estCorrecte
-    }
+}
+class Test{
+    idTest : int
 
-    class Reponse {
-        +int idReponse
-        +int idInscrit
-        +int idQuestion
-        +int idOption
-        +bool estCorrecte
-    }
+}
+class OptionQuestion{
+    idOption : int
+    texte : string
+    correct : boolean 
+}
+class ReponseQuestion{
+    idReponseQuestion : int
+    isCorrect : boolean
+}
+class BrancheQuestion{
+    idBranche : int
+    nomBranche : string
+}
 
-    Inscrit "1" --> "1" Test 
-    Test "*" --> "*" Question 
-    Question "1" --> "*" Option 
-    Inscrit "1" --> "*" Reponse
-    Question "1" --> "*" Reponse
-    Option "1" --> "*" Reponse
+Inscrit "1" --> "1" ReponseTest
+ReponseTest "1" --> "1" Test
+OptionQuestion "*" --> "1" Question
+ReponseQuestion "1" --> "1" Question
+BrancheQuestion "1" --> "*" Question
+ReponseQuestion "1" --> "1" Inscrit
+ReponseQuestion "*" --> "*" OptionQuestion
+Test "*"--> "*" BrancheQuestion
+
+
