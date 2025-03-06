@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ArticleRequest;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Tag;
@@ -24,18 +25,12 @@ class ArticleController extends Controller
     /**
      * Ajouter un nouvel article.
      */
-    public function store(Request $request)
+    public function store(ArticleRequest $request)
     {
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'category_id' => 'required|exists:categories,id',
-            'content' => 'required|string',
-            'tags' => 'array',
-            'tags.*' => 'exists:tags,id',
-        ]);
+        
 
-        $article = Article::create($validated);
-        $article->tags()->attach($validated['tags'] ?? []);
+        $article = Article::create($request);
+        $article->tags()->attach($request['tags'] ?? []);
 
         return response()->json([
             'message' => __('articles.article_created'),
@@ -57,20 +52,14 @@ class ArticleController extends Controller
     /**
      * Mettre à jour un article.
      */
-    public function update(Request $request, $id)
+    public function update(ArticleRequest $request, $id)
     {
         $article = Article::findOrFail($id);
 
-        $validated = $request->validate([
-            'title' => 'required|string|max:255',
-            'category_id' => 'required|exists:categories,id',
-            'content' => 'required|string',
-            'tags' => 'array',
-            'tags.*' => 'exists:tags,id',
-        ]);
+        
 
-        $article->update($validated);
-        $article->tags()->sync($validated['tags'] ?? []);
+        $article->update($request);
+        $article->tags()->sync($request['tags'] ?? []);
 
         return response()->json([
             'message' => __('articles.article_updated'),

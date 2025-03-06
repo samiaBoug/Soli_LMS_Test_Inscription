@@ -13,6 +13,9 @@ class User extends Authenticatable
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable, HasRoles;
 
+    public function articles(){
+       return $this->hasMany(Article::class);
+    }
     /**
      * The attributes that are mass assignable.
      *

@@ -11,23 +11,29 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Tag;
 use App\Models\User;
 use App\Services\ArticleService;
+use App\Services\CommentService;
+use App\Services\TagService;
+use App\Services\UserService;
 
 class ArticleController extends Controller
 {
-  protected $articleService ;
-  public function __construct(ArticleService $articleService)
+  protected $articleService , $commentService , $userService, $tagService;
+  public function __construct(ArticleService $articleService , CommentService $commentService , UserService $userService, TagService $tagService)
   {
     $this->articleService = $articleService;
+    $this->commentService = $commentService ;
+    $this->userService = $userService;
+    $this->tagService = $tagService;
   }
 
  
   public function index(Request $request)
   {
-    $query = Article::query();
+    $query = $this->articleService->query();
     
-    $ArticleCount= Article::count();
-    $CommentCount = Comment::count();
-    $UserCount = User::count();
+    $ArticleCount= $this->articleService->count();
+    $CommentCount = $this->commentService->count();
+    $UserCount = $this->userService->count();
 
     // Filtrer par catégorie
     if ($request->has('category') && $request->category != '') {
@@ -54,8 +60,8 @@ class ArticleController extends Controller
 
     // Ajouter les paramètres de filtrage à la pagination
     $articles->appends($request->all());
-    $categories = \App\Models\Category::all();
-    $tags = \App\Models\Tag::all();
+    $categories = $this->articleService->all();
+    $tags = $this->tagService->all();
 
 
     if (Auth::check() && Auth::user()->roles->contains('name', 'admin')) {

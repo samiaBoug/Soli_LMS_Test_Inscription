@@ -10,22 +10,7 @@ class ArticleService{
     public function getArticlesWithRelations(){
         return Article::with(['user', 'comments', 'categories'])->get();
     }
-    // query
-    public function query(){
-        return Article::query() ;
-    }
-    //count 
-    public function count(){
-        return Article::count();
-    }
-    //all
-    public function all(){
-        return Article::all();
-    }
-    //create 
-    public function create(){
-        
-    }
+
     
     //updateArticleCategories
     public function updateArticleCategories(Article $article, array $categoryIds){

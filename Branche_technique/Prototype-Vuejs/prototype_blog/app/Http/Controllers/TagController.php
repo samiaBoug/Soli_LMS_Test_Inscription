@@ -11,15 +11,19 @@ class TagController extends Controller
   /**
    * Display a listing of the resource.
    */
-  public function index(Request $request)
-  {
-    $query = Tag::query();
-    if($request->has('search') && $request->search != ''){
-      $query->where('name', 'like', '%' . $request->search . '%');
-    }
+  // public function index(Request $request)
+  // {
+  //   $query = Tag::query();
+  //   if($request->has('search') && $request->search != ''){
+  //     $query->where('name', 'like', '%' . $request->search . '%');
+  //   }
 
-    $tags = $query->paginate(10);
-    return view('admin.tag.index', compact('tags'));
+  //   $tags = $query->paginate(10);
+  //   return view('admin.tag.index', compact('tags'));
+  // }
+  public function index(){
+    $tags = Tag::all();
+    return response()->json($tags);
   }
 
   /**

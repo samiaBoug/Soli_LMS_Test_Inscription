@@ -24,6 +24,7 @@ class ArticleFactory extends Factory
             'category_id' => $this->faker->numberBetween(1, 10),
             'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'updated_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'user_id'=> 1 
         ];
     }
 }

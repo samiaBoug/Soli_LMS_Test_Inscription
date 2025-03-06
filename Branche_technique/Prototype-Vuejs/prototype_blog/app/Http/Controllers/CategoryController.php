@@ -11,15 +11,17 @@ class CategoryController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
         //
-        $query = Category::query();
-        if($request->has('search') && $request->search != ''){
-            $query->where('name', 'like', '%' . $request->search . '%');
-        }
-        $categories = $query->paginate(10);
-        return view('admin.category.index', compact('categories'));
+        // $query = Category::query();
+        // if($request->has('search') && $request->search != ''){
+        //     $query->where('name', 'like', '%' . $request->search . '%');
+        // }
+        // $categories = $query->paginate(10);
+        // return view('admin.category.index', compact('categories'));
+        $categories = Category::all();
+        return response()->json($categories);
         
     }
 

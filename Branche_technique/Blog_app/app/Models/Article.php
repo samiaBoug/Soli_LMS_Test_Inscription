@@ -13,7 +13,7 @@ class Article extends Model
   use HasFactory;
 
 
-  protected $fillable = ['title', 'content', 'category_id'];
+  protected $fillable = ['title', 'content', 'category_id', 'user_id'];
 
   public function category()
   {
@@ -27,5 +27,8 @@ class Article extends Model
   public function comments()
   {
     return $this->morphMany(Comment::class, 'commentable');
+  }
+  public function users(){
+    return $this->belongsTo(User::class);
   }
 }
