@@ -6,7 +6,7 @@
     <div class="col-md-8">
       <div class="card shadow-sm border-0">
         <div class="card-header bg-success text-white text-center">
-          <h5>{{ __('articles.add_article') }}</h5>
+          <h5>Ajouter un Article</h5>
         </div>
 
         <div class="card-body">
@@ -15,26 +15,26 @@
 
             {{-- Titre --}}
             <div class="mb-3">
-              <label for="title" class="form-label">{{ __('articles.title') }}</label>
+              <label for="title" class="form-label">Titre</label>
               <input
                 type="text"
                 name="title"
                 class="form-control"
                 id="title"
-                placeholder="{{ __('articles.title_placeholder') }}"
+                placeholder="Titre de l'article"
                 value="{{ old('title') }}"
                 required>
             </div>
 
             {{-- Catégorie --}}
             <div class="mb-3">
-              <label for="category" class="form-label">{{ __('articles.category') }}</label>
+              <label for="category" class="form-label">Catégorie</label>
               <select
                 name="category"
                 class="form-select"
                 id="category"
                 required>
-                <option value="" hidden>{{ __('articles.choose_category') }}</option>
+                <option value="" hidden>-- Choisir une catégorie --</option>
                 @foreach($categories as $category)
                   <option value="{{ $category->id }}">
                     {{ $category->name }}
@@ -45,7 +45,7 @@
 
             {{-- Tags (Multi-Select Dropdown) --}}
             <div class="mb-3">
-              <label for="tags" class="form-label">{{ __('articles.tags') }}</label>
+              <label for="tags" class="form-label">Tags</label>
               <select
                 name="tags[]"
                 id="tags"
@@ -61,20 +61,20 @@
 
             {{-- Contenu --}}
             <div class="mb-3">
-              <label for="content" class="form-label">{{ __('articles.content') }}</label>
+              <label for="content" class="form-label">Contenu</label>
               <textarea
                 name="content"
                 class="form-control summernote"
                 id="summernote"
                 rows="5"
-                placeholder="{{ __('articles.content_placeholder') }}"
+                placeholder="Contenu de l'article"
                 required>{{ old('content') }}</textarea>
             </div>
 
             {{-- Boutons d'action --}}
             <div class="text-center">
-              <a href="{{ route('articles.index') }}" class="btn btn-secondary">{{ __('articles.back') }}</a>
-              <button type="submit" class="btn btn-success px-4">{{ __('articles.add') }}</button>
+              <a href="{{ route('articles.index') }}" class="btn btn-secondary">Retour</a>
+              <button type="submit" class="btn btn-success px-4">Ajouter</button>
             </div>
 
           </form>
@@ -84,17 +84,15 @@
   </div>
 </div>
 @endsection
-
-<script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
+    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
 <script>
   $(document).ready(function() {
     $('#summernote').summernote({
-      placeholder: "{{ __('articles.summernote_placeholder') }}",
+      placeholder: 'Rédigé votre article ici...',
       tabsize: 2,
       height: 200
     });
   });
 </script>
-
