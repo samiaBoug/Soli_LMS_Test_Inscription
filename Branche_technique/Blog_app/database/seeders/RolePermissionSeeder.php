@@ -14,16 +14,19 @@ class RolePermissionSeeder extends Seeder
      */
     public function run(): void
     {
-        Role::create([
-            'name'=> 'admin',
-            'role'=> 'admin'
-        ]);
-        Role::create([
-            'name'=> 'user',
-            'role'=> 'user'
-        ]);
+        $admin = Role::where('name', 'admin')->first();
+
         Permission::create([
+            'name'=> 'edit',
 
         ]);
+        Permission::create([
+            'name'=> 'kill',
+            
+        ]);
+        $admin->givePermissionTo('edit');
+        $admin->givePermissionTo('kill');
+
+
     }
 }

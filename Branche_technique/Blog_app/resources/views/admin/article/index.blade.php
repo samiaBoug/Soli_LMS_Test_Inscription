@@ -4,11 +4,7 @@
     <div class="container">
         <h1>{{ __('article.header') }}</h1>
 
-        <x-admin-chart 
-            :ArticleCount="$ArticleCount"
-            :UserCount="$UserCount" 
-            :CommentCount="$CommentCount">
-        </x-admin-chart>
+
 
         <div class="card">
             <div class="card-header d-flex pb-0 pt-3">
@@ -89,18 +85,22 @@
                                         <a href="{{ route('articles.show', $article->id) }}" class="btn btn-secondary">
                                             {{ __('article.show') }}
                                         </a>
+                                        @can('update', $article)
                                         <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-primary">
                                             {{ __('article.edit') }}
                                         </a>
-                                        <form action="{{ route('articles.destroy', $article->id) }}" method="POST" 
-                                              style="display:inline;" 
-                                              onsubmit="return confirm('{{ __('article.delete_confirm') }}');">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">
-                                                {{ __('article.delete') }}
-                                            </button>
-                                        </form>
+                                        @endcan
+                                        @can('delete', $article)
+                                            <form action="{{ route('articles.destroy', $article->id) }}" method="POST" 
+                                                style="display:inline;" 
+                                                onsubmit="return confirm('{{ __('article.delete_confirm') }}');">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">
+                                                    {{ __('article.delete') }}
+                                                </button>
+                                            </form>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endif

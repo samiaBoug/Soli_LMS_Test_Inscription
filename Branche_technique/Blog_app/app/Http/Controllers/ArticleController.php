@@ -100,6 +100,7 @@ class ArticleController extends Controller
       'title' => $request['title'],
       'category_id' => $request['category'],
       'content' => $request['content'],
+      'user_id'=> Auth::user()->id 
     ]);
 
     // Attach selected tags
@@ -134,6 +135,7 @@ class ArticleController extends Controller
     }
 
     $article = Article::findOrFail($id);
+    $this->authorize('edit', $article);
     $categories = Category::all();
     $allTags = Tag::all();
     $selectedTags = $article->tags->pluck('id')->toArray();
@@ -153,6 +155,7 @@ class ArticleController extends Controller
 
 
     $article = Article::findOrFail($id);
+    $this->authorize('edit', $article);
     $article->update([
       'title' => $request['title'],
       'category_id' => $request['category'],
@@ -173,7 +176,9 @@ class ArticleController extends Controller
       return redirect()->route('articles.index');
     }
 
-    $article = Article::where('id', $id);
+    $article = Article::findOrFail($id);
+    $this->authorize('kill', $article);
+
     $article->delete();
     return redirect()->route('articles.index')->with('success', 'L\'article a bien été supprimé');
   }

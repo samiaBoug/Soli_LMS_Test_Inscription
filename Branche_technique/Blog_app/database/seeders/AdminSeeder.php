@@ -19,6 +19,12 @@ class AdminSeeder extends Seeder
             'email' => 'admin@gmail.com',
             'password' => 'password']);
         $user->assignRole('admin');
+        
+        $user1 = User::create([
+            'name' => 'Admin',
+            'email' => 'admin1@gmail.com',
+            'password' => 'password']);
+        $user1->assignRole('admin');
 
        
     }
