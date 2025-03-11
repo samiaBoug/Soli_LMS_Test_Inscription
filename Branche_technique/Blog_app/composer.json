@@ -23,17 +23,22 @@
         "phpunit/phpunit": "^11.0.1"
     },
     "autoload": {
-        "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
-        }
+    "psr-4": {
+        "App\\": "app/",
+        "Modules\\pkgBlog\\Database\\Factories\\": "Modules/pkgBlog/Database/Factories/",
+        "Modules\\pkgBlog\\Database\\Seeders\\": "Modules/pkgBlog/Database/Seeders/",
+        "Modules\\pkgBlog\\": "Modules/pkgBlog/",
+        "Modules\\": "Modules/"
+    }
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Tests\\": "tests/",
+            "Modules\\pkgBlog\\Database\\Factories\\": "Modules/pkgBlog/Database/Factories/",
+            "Modules\\pkgBlog\\Database\\Seeders\\": "Modules/pkgBlog/Database/Seeders/"
         }
     },
+
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",

@@ -1,0 +1,31 @@
+<?php
+
+namespace Modules\pkgBlog\Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use Modules\pkgBlog\Models\User;
+
+class AdminSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        //
+        $user = User::create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => 'password']);
+        $user->assignRole('admin');
+        
+        $user1 = User::create([
+            'name' => 'Admin',
+            'email' => 'admin1@gmail.com',
+            'password' => 'password']);
+        $user1->assignRole('admin');
+
+       
+    }
+}

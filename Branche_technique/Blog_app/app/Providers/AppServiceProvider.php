@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Models\Article;
-use App\Policies\ArticlePolicy;
+use Modules\pkgBlog\Article;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Modules\pkgBlog\Policies\ArticlePolicy;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
     ];
     public function register(): void
     {
-        //
+        
     }
 
     /**
