@@ -14,6 +14,13 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         //
-        Category::factory()->count(20)->create();
+        Category::create([
+            'name' => 'Web',
+           
+        ]);
+        Category::create([
+            'name' => 'Mobile',
+         
+        ]);
     }
 }

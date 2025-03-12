@@ -2,7 +2,7 @@
 
 namespace Modules\pkgBlog\Database\Factories;
 
-use App\Models\Article;
+use Modules\pkgBlog\Models\Article;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +21,7 @@ class ArticleFactory extends Factory
             //
             'title' => $this->faker->sentence(3),
             'content' => $this->faker->paragraph(5),
-            'category_id' => $this->faker->numberBetween(1, 10),
+            'category_id' => $this->faker->numberBetween(1, 2),
             'created_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'updated_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
             'user_id'=> 1 

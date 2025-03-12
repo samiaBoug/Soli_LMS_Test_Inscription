@@ -9,9 +9,7 @@ use Illuminate\Database\Seeder;
 
 class ArticleTagSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
+    
     public function run(): void
     {
         $articles = Article::all();

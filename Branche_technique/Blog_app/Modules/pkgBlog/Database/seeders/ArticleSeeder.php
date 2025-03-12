@@ -12,6 +12,24 @@ class ArticleSeeder extends Seeder
      */
     public function run(): void
     {
-        Article::factory()->count(4)->create();
+        // Article::factory()->count(4)->create();
+        Article::create([
+            
+                //
+                'title' =>" titre 1",
+                'content' => "content 1",
+                'category_id' => 1,
+                'user_id'=> 1 
+           
+        ]);
+        Article::create([
+            
+            //
+            'title' =>" titre 2",
+            'content' => "content 2",
+            'category_id' => 2,
+            'user_id'=> 2 
+       
+    ]);
     }
 }
