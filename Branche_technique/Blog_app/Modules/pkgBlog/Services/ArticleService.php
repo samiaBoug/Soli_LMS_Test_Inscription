@@ -1,7 +1,7 @@
 <?php
 namespace Modules\pkgBlog\Services ;
 
-use App\Http\Requests\ArticleRequest;
+use Modules\pkgBlog\App\Requests\ArticleRequest;
 use Modules\pkgBlog\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Modules\pkgBlog\Models\Article ;
@@ -10,7 +10,7 @@ class ArticleService{
 
     //méthode getArticlesWithRelations()
     public function getArticlesWithRelations(){
-        return Article::with(['user', 'comments', 'categories'])->get();
+        return Article::with(['user', 'comments', 'category'])->get();
     }
     // query
     public function query(){
@@ -77,7 +77,32 @@ class ArticleService{
 
     public function getArticle($id){
         // Récupérer l'article avec l'ID donné, y compris les relations
-       return Article::with(['user', 'comments', 'categories'])->findOrFail($id);
+       return Article::with(['user', 'comments', 'category'])->findOrFail($id);
 
     }
+    //filtre 
+    public function filterArticles(ArticleRequest $request)
+    {
+        $query = Article::query();
+    
+        if ($request->filled('category')) {
+            $query->where('category_id', $request->category);
+        }
+    
+        if ($request->filled('tag')) {
+            $query->whereHas('tags', function ($query) use ($request) {
+                $query->where('tags.id', $request->tag);
+            });
+        }
+    
+        if ($request->filled('search')) {
+            $query->where(function ($query) use ($request) {
+                $query->where('title', 'like', '%' . $request->search . '%')
+                      ->orWhere('content', 'like', '%' . $request->search . '%');
+            });
+        }
+    
+        return $query->paginate(10);
+    }
+    
 }

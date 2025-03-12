@@ -13,7 +13,7 @@ class ArticlePolicy
      */
     public function viewAny(User $user): bool
     {
-        return false;
+        return $this->isAdmin($user);
     }
 
     /**
@@ -21,15 +21,19 @@ class ArticlePolicy
      */
     public function view(User $user, Article $article): bool
     {
-        return false;
+        return $this->isAdmin($user) ||$user->id === $article->user_id ;
     }
 
     /**
      * Determine whether the user can create models.
      */
+    public function isAdmin(User $user){
+        return $user->roles->contains('name','admin');
+    }
+
     public function create(User $user): bool
     {
-        return false;
+        return $this->isAdmin($user);
     }
 
     /**
@@ -53,7 +57,7 @@ class ArticlePolicy
      */
     public function restore(User $user, Article $article): bool
     {
-        return false;
+        return  $this->isAdmin($user);;
     }
 
     /**
@@ -61,6 +65,6 @@ class ArticlePolicy
      */
     public function forceDelete(User $user, Article $article): bool
     {
-        return false;
+        return $this->isAdmin($user); ;
     }
 }

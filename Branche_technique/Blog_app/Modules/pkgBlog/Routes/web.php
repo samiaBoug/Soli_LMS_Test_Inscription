@@ -39,6 +39,8 @@ Route::middleware('auth' , 'role:admin')->group(function () {
     Route::delete('/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 });
 });
+Route::get('/',[ ArticleController::class , 'index'])->name('public.index');
+Route::get('/{article}',[ ArticleController::class , 'show'])->name('public.show');
 
 
 

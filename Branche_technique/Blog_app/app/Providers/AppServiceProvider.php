@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Modules\pkgBlog\Article;
+use Modules\pkgBlog\Models\Article;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Modules\pkgBlog\Policies\ArticlePolicy;

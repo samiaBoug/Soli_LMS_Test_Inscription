@@ -62,8 +62,9 @@
                 <form action="/articles" method="GET">
                     <button type="submit" class="btn btn-secondary">Retour aux articles</button>
                 </form>
-
+                @can('delete', $article)
                 <div>
+                   
                     <!-- Edit Article Button -->
                     <form action="/articles/{{ $article->id }}/edit" method="GET" class="d-inline">
                         <button type="submit" class="btn btn-primary">Modifier</button>
@@ -76,6 +77,7 @@
                         <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
                 </div>
+                @endcan
             </div>
         </div>
     </div>

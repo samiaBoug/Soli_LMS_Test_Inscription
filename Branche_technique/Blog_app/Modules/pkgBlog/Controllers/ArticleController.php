@@ -3,11 +3,12 @@
 namespace Modules\pkgBlog\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ArticleRequest;
+use Modules\pkgBlog\App\Requests\ArticleRequest;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Modules\pkgBlog\Models\Article;
+use Modules\pkgBlog\Policies\ArticlePolicy;
 use Modules\pkgBlog\Services\ArticleService;
 use Modules\pkgBlog\Services\CategoryService;
 use Modules\pkgBlog\Services\CommentService;
@@ -17,6 +18,9 @@ use Modules\pkgBlog\Services\TagService;
 class ArticleController extends Controller
 {
   protected $articleService , $commentService , $userService, $tagService , $categoryService;
+  protected $policies = [
+    Article::class => ArticlePolicy::class
+  ];
   public function __construct(ArticleService $articleService , CommentService $commentService , UserService $userService, TagService $tagService , CategoryService $categoryService)
   {
     $this->articleService = $articleService;
@@ -96,7 +100,7 @@ class ArticleController extends Controller
     }
 
 
-   $this->articleService->create( $request);
+   $this->articleService->create($request);
 
     return redirect()->route('articles.index')->with('success', 'L\'article a bien été créé');
   }
