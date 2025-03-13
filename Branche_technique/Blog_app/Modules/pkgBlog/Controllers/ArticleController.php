@@ -69,7 +69,7 @@ class ArticleController extends Controller
 
 
     if (Auth::check() && Auth::user()->roles->contains('name', 'admin')) {
-      return view('admin.article.index', compact('articles', 'categories', 'tags','ArticleCount','CommentCount', 'UserCount' ));
+      return view('pkgBlog::article.index', compact('articles', 'categories', 'tags','ArticleCount','CommentCount', 'UserCount' ));
     } else {
       return view('public.index', compact('articles', 'categories', 'tags'));
     }
@@ -87,7 +87,7 @@ class ArticleController extends Controller
     $categories = $this->categoryService->all();
     $allTags = $this->tagService->all();
 
-    return view('admin.article.create', compact('categories', 'allTags'));
+    return view('pkgBlog::article.create', compact('categories', 'allTags'));
   }
 
   /**
@@ -115,7 +115,7 @@ class ArticleController extends Controller
     $commentableType = get_class($article);
 
     if (Auth::check() && Auth::user()->roles->contains('name', 'admin')) {
-      return view('admin.article.show', compact('article', 'commentableId', 'commentableType'));
+      return view('pkgBlog::article.show', compact('article', 'commentableId', 'commentableType'));
     } else {
       return view('public.show', compact('article', 'commentableId', 'commentableType'));
     }
@@ -137,7 +137,7 @@ class ArticleController extends Controller
     $allTags = $this->tagService->all();
     $selectedTags = $article->tags->pluck('id')->toArray();
 
-    return view('admin.article.edit', compact('article', 'categories', 'allTags', 'selectedTags'));
+    return view('pkgBlog::article.edit', compact('article', 'categories', 'allTags', 'selectedTags'));
   }
 
   /**
