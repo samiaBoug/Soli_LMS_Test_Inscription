@@ -112,4 +112,11 @@
             </div>
         </div>
     </div>
+
+    <button>
+        <a href="{{ route('articles.export') }}">Exporte</a>
+    </button>
+
+
+
 @stop

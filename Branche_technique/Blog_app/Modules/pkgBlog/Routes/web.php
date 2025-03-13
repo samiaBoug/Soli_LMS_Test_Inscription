@@ -7,6 +7,9 @@ use Modules\pkgBlog\Controllers\TagController ;
 use Modules\pkgBlog\Controllers\CategoryController ;
 use Illuminate\Support\Facades\Auth;
 
+Route::get('/articles/export', [ArticleController::class, 'export'])->name('articles.export');
+Route::get('/articles/import', [ArticleController::class, 'import']);
+
 Auth::routes();
 
 Route::prefix('articles')->group(function () {

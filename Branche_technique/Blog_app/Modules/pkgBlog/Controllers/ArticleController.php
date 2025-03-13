@@ -7,6 +7,9 @@ use Modules\pkgBlog\App\Requests\ArticleRequest;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use Modules\pkgBlog\App\Exports\ArticleExport;
+use Modules\pkgBlog\App\Imports\ArticleImport;
 use Modules\pkgBlog\Services\ArticleService;
 use Modules\pkgBlog\Services\CategoryService;
 use Modules\pkgBlog\Services\CommentService;
@@ -144,5 +147,14 @@ class ArticleController extends Controller
 
     $article->delete();
     return redirect()->route('articles.index')->with('success', 'L\'article a bien été supprimé');
+  }
+  public function import(){
+ 
+    Excel::import(new ArticleImport, 'articles.xlsx');
+    return redirect('/articles')->with('success', 'All good!');
+  }
+  public function export()
+  {
+      return Excel::download(new ArticleExport, 'articles.xlsx');
   }
 }
