@@ -62,13 +62,9 @@
             {{-- Contenu --}}
             <div class="mb-3">
               <label for="content" class="form-label">Contenu</label>
-              <textarea
-                name="content"
-                class="form-control summernote"
-                id="summernote"
-                rows="5"
-                placeholder="Contenu de l'article"
-                required>{{ old('content') }}</textarea>
+             
+              <textarea id="summernote" name="content" ></textarea>
+
             </div>
 
             {{-- Boutons d'action --}}
@@ -83,16 +79,5 @@
     </div>
   </div>
 </div>
+
 @endsection
-    <script src="//code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('#summernote').summernote({
-      placeholder: 'Rédigé votre article ici...',
-      tabsize: 2,
-      height: 200
-    });
-  });
-</script>

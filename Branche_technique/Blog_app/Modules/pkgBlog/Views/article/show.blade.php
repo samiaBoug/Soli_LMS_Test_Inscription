@@ -53,7 +53,7 @@
 
             <!-- Article Content -->
             <div class="mt-4 text-dark">
-                {{ $article->content }}
+                {!! $article->content !!}
             </div>
 
             <!-- Action Buttons -->

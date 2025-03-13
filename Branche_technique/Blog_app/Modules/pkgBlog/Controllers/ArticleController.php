@@ -7,8 +7,6 @@ use Modules\pkgBlog\App\Requests\ArticleRequest;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Modules\pkgBlog\Models\Article;
-use Modules\pkgBlog\Policies\ArticlePolicy;
 use Modules\pkgBlog\Services\ArticleService;
 use Modules\pkgBlog\Services\CategoryService;
 use Modules\pkgBlog\Services\CommentService;
@@ -18,9 +16,7 @@ use Modules\pkgBlog\Services\TagService;
 class ArticleController extends Controller
 {
   protected $articleService , $commentService , $userService, $tagService , $categoryService;
-  protected $policies = [
-    Article::class => ArticlePolicy::class
-  ];
+
   public function __construct(ArticleService $articleService , CommentService $commentService , UserService $userService, TagService $tagService , CategoryService $categoryService)
   {
     $this->articleService = $articleService;
@@ -33,43 +29,18 @@ class ArticleController extends Controller
  
   public function index(Request $request)
   {
-    $query = $this->articleService->query();
     
-    $ArticleCount= $this->articleService->count();
-    $CommentCount = $this->commentService->count();
-    $UserCount = $this->userService->count();
-
-    // Filtrer par catégorie
-    if ($request->has('category') && $request->category != '') {
-      $query->where('category_id', $request->category);
-    }
-
-    // Filtrer par tag
-    if ($request->has('tag') && $request->tag != '') {
-      $query->whereHas('tags', function ($query) use ($request) {
-        $query->where('tags.id', $request->tag);
-      });
-    }
-
-    // Filtrer par recherche dans le titre ou le contenu
-    if ($request->has('search') && $request->search != '') {
-      $query->where(function ($query) use ($request) {
-        $query->where('title', 'like', '%' . $request->search . '%')
-          ->orWhere('content', 'like', '%' . $request->search . '%');
-      });
-    }
-
     // Paginer les résultats
-    $articles = $query->paginate(10);
+    $articles =  $this->articleService->filterArticles($request);
 
     // Ajouter les paramètres de filtrage à la pagination
     $articles->appends($request->all());
-    $categories = $this->articleService->all();
+    $categories = $this->categoryService->all();
     $tags = $this->tagService->all();
 
 
     if (Auth::check() && Auth::user()->roles->contains('name', 'admin')) {
-      return view('pkgBlog::article.index', compact('articles', 'categories', 'tags','ArticleCount','CommentCount', 'UserCount' ));
+      return view('pkgBlog::article.index', compact('articles', 'categories', 'tags' ));
     } else {
       return view('public.index', compact('articles', 'categories', 'tags'));
     }

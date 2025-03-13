@@ -1,10 +1,12 @@
 <?php
 namespace Modules\pkgBlog\Services ;
 
+use Illuminate\Http\Request;
 use Modules\pkgBlog\App\Requests\ArticleRequest;
 use Modules\pkgBlog\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Modules\pkgBlog\Models\Article ;
+use Modules\pkgBlog\Models\Tag;
 
 class ArticleService{
 
@@ -74,17 +76,17 @@ class ArticleService{
     public function allCategories(){
         return Category::all();
     }
-
+ 
     public function getArticle($id){
         // Récupérer l'article avec l'ID donné, y compris les relations
        return Article::with(['user', 'comments', 'category'])->findOrFail($id);
 
     }
     //filtre 
-    public function filterArticles(ArticleRequest $request)
+    public function filterArticles($request)
     {
         $query = Article::query();
-    
+        //filtre
         if ($request->filled('category')) {
             $query->where('category_id', $request->category);
         }

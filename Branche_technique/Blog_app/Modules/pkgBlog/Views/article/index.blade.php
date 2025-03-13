@@ -3,9 +3,6 @@
 @section('content')
     <div class="container">
         <h1>{{ __('pkgBlog::article.header') }}</h1>
-
-
-
         <div class="card">
             <div class="card-header d-flex pb-0 pt-3">
                 <!-- Champ de recherche -->
