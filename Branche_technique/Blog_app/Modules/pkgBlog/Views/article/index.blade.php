@@ -49,6 +49,22 @@
                 <h3 class="card-title my-0">{{ __('pkgBlog::article.list_of_articles') }}</h3>
                 <a href="{{ route('articles.create') }}" class="btn btn-success">{{ __('pkgBlog::article.add_article') }}</a>  
             </div>
+            <!-- export import -->
+            <div class="d-flex align-items-center mb-2 ml-2 mt-2">
+                <a href="{{ route('articles.export') }}"  class="btn btn-default btn-sm mt-0 mx-2">
+                    <i class="fas fa-file-export">Export</i>
+                </a>
+                
+                <form action="{{ route('articles.import') }}" method="post" class="mt-2" enctype="multipart/form-data"
+                    id="importForm">
+                    @csrf
+                    <label for="upload" class="btn btn-default btn-sm font-weight-normal">
+                        <i class="fas fa-file-download">Import</i>
+                        {{ __('') }}
+                    </label>
+                    <input type="file" id="upload" name="file" style="display:none;" onchange="submitForm()" />
+                </form>
+                </div>
 
             <div class="card-body">
                 @if(session('success'))
@@ -113,10 +129,11 @@
         </div>
     </div>
 
-    <button>
-        <a href="{{ route('articles.export') }}">Exporte</a>
-    </button>
+  
 
-
-
+    <script>
+    function submitForm() {
+        document.getElementById("importForm").submit();
+    }
+</script>
 @stop

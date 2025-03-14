@@ -7,18 +7,19 @@ use Modules\pkgBlog\Models\Article;
 
 class ArticleImport implements ToModel
 {
-    /**
-    * @param array $row
-    *
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
+    // private function recordExists(array $row){
+    //     return Article::where('title', $row['title'])->exists();
+    // }
     public function model(array $row)
-    {
+    {   
+        // if($this->recordExists($row)){
+        //     return null;
+        // }
         return new Article([
-            'id'=> $row[0],
             'title'=> $row[1],
-            'category'=> $row[2],
-            'date de creaction'=> $row[3],
+            'content'=> $row[2],
+            'category_id'=> $row[5],
+            'user_id'=> $row[6],
 
         ]);
     }

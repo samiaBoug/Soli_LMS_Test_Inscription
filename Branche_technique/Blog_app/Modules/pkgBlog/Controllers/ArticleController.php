@@ -148,11 +148,22 @@ class ArticleController extends Controller
     $article->delete();
     return redirect()->route('articles.index')->with('success', 'L\'article a bien été supprimé');
   }
-  public function import(){
+  public function import(Request $request){
  
-    Excel::import(new ArticleImport, 'articles.xlsx');
-    return redirect('/articles')->with('success', 'All good!');
+    $request->validate([
+      'file' => 'required|mimes:xlsx,xls,csv',
+  ]);
+
+   Excel::import(new ArticleImport, $request->file('file'));
+  
+
+  return redirect()->route('articles.index')->with(
+      'success', __('', [
+      'modelNames' =>  __('PkgBlog::article.plural')
+      ]));
+
   }
+
   public function export()
   {
       return Excel::download(new ArticleExport, 'articles.xlsx');

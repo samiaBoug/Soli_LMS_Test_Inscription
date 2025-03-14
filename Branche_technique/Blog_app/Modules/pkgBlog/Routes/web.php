@@ -8,7 +8,7 @@ use Modules\pkgBlog\Controllers\CategoryController ;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/articles/export', [ArticleController::class, 'export'])->name('articles.export');
-Route::get('/articles/import', [ArticleController::class, 'import']);
+Route::post('/articles/import', [ArticleController::class, 'import'])->name('articles.import');
 
 Auth::routes();
 
